@@ -35,7 +35,7 @@ The minimal specification (`format: recletters-typst` and `background: letterhea
 
 ### Options
 
-Everything listed here is optional and organized by consequence (address block, signature block, or general formatting):
+Everything listed here is optional and organized by consequence ([address block](#address-block), [signature block](#signature-block), or [general formatting](#general-formatting)):
 
 #### Address block
 
