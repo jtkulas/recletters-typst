@@ -3,22 +3,21 @@ title: "Letter of Recommendation"
 format:
   recletters-typst:
     background: letterhead/SCSUPsychologyLetterhead.pdf   
-    from-name: "Jane Doe, PhD"
-    from-title: "Associate Professor"
-    from-affiliation: "Department of Psychology"
-    from-align: left                    # `left` | `right`  (only used if any from-* is specified)              
-    subject: "Recommendation for Alex Student"
+    from-name: "I M Awesome, PhD"
+    from-title: "Assistant Professor"
+    from-affiliation: "Biosciences"
+    from-align: left           
+    subject: "Recommendation for Bullwinkle J. Moose"
+    subject-align: right
     opening: "Dear Committee Members,"
     closing: "Sincerely,"
-    signature: "John T Kulas"
-    email-name: "temp"
-    email-domain: "stcloudstate.edu"
+    signature: "Ignacious M Awesome"
+    date: today
+    email-name: "imawesome"
+    email-domain: "looneytunes.edu"
     phone: "320-308-4157"
     emptyhead: 0
     emptyfoot: 0
-#    signature: assets/signature.png   # optional
-#    date: today
-keep-typ: true
 ---
 
 I am writing to strongly recommend...

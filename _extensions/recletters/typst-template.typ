@@ -39,7 +39,7 @@
 
   // Sender block
   if from-name != none or from-title != none or from-affiliation != none [
-    #align(if from-align == "left" { left } else { right })[
+    #align(if from-align == "right" { right } else { left })[
       #if from-name != none [*#from-name*] \
       #if from-title != none [#from-title] \
       #if from-affiliation != none [#from-affiliation]
