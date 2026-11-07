@@ -71,6 +71,7 @@ These options populate a small block of text to be located at the foot of the do
 |Option   | Description           |  Default Value         |  Example  |
 |---------|-----------------------|------------------------|-----------|
 |subject | bolded "Re:..." to be rendered above opening line | NULL | subject: "Recommendation for Bullwinkle J. Moose"  |
+|subject-align | `left` or `right` justification of subject line | left | subject-line: right  |
 |emptyhead | number of empty rows to add prior to any document text (1^st^ page) | 0 | emptyhead: 5 |
 |emptyfoot | number of empty rows to add at the bottom of the 1^st^ page | 0 | emptyfoot: -2 |
 
