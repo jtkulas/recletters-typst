@@ -5,7 +5,7 @@
 _TODO_: Replace the `<github-organization>` with your GitHub organization.
 
 ```bash
-quarto use template <github-organization>/letters-of-recommendation
+quarto use template jtkulas/recletters-typst
 ```
 
 This will install the format extension and create an example qmd file
