@@ -1,7 +1,6 @@
 #let recletter(
   background: none,
   emptyhead: 0,
-  emptyfoot: 0,
   subject: none,
   subject-align: "left",
   from-name: none,
@@ -19,14 +18,8 @@
   body,
 ) = {
   set page(
-  paper: "us-letter",
-  margin: (top: 1.8in, bottom: 1.1in, left: 1in, right: 1in),
-  // Keep the existing background setting here.
-)
-
-// This is emitted once, at the beginning of the letter.
-v(emptyhead * 1.2em)
-
+    paper: "us-letter",
+    margin: (top: 1.8in, bottom: 1.1in, left: 1in, right: 1in),
     background: if background != none and background != "" {
       context {
         if counter(page).get().first() == 1 {
@@ -40,6 +33,9 @@ v(emptyhead * 1.2em)
       none
     }
   )
+
+  // One-time top spacer, before the document's content begins.
+  v(emptyhead * 1.2em)
 
   // Sender block
   if from-name != none or from-title != none or from-affiliation != none [
