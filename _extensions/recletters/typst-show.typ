@@ -9,6 +9,7 @@
   $if(from-affiliation)$from-affiliation: "$from-affiliation$",$endif$
   $if(from-align)$from-align: "$from-align$",$endif$
   $if(date)$date: "$date$",$endif$
+  $if(email)$email: "$email$",$endif$
   $if(email-name)$email-name: "$email-name$",$endif$
   $if(email-domain)$email-domain: "$email-domain$",$endif$
   $if(phone)$phone: "$phone$",$endif$
