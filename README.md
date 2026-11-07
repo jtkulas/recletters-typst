@@ -48,6 +48,7 @@ The minimal specification (`format: recletters-typst` and `background: letterhea
 
 ## Known issues
 
++ e-mail addresses are currently YAML specified separately by alias and domain - there was a rendering issue with typst's treatment of the "at" sign (@) and this is the current workaround. If you have a better idea, please open an issue.
 
 ## Contributing 
 
