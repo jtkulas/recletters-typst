@@ -1,7 +1,6 @@
 #show: doc => recletter(
   background: "$background$",
   $if(emptyhead)$emptyhead: $emptyhead$,$endif$
-  $if(emptyfoot)$emptyfoot: $emptyfoot$,$endif$
   $if(subject)$subject: "$subject$",$endif$
   $if(subject-align)$subject-align: "$subject-align$",$endif$
   $if(from-name)$from-name: "$from-name$",$endif$

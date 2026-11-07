@@ -19,27 +19,14 @@
   body,
 ) = {
   set page(
-    paper: "us-letter",
-    // Apply the spacing adjustments to page 1's actual margins. Later pages
-    // retain the standard margins, regardless of where content flows.
-    margin: (
-      top: context {
-        if counter(page).get().first() == 1 {
-          1.8in + emptyhead * 1.2em
-        } else {
-          1.8in
-        }
-      },
-      bottom: context {
-        if counter(page).get().first() == 1 {
-          1.1in + emptyfoot * 1.2em
-        } else {
-          1.1in
-        }
-      },
-      left: 1in,
-      right: 1in,
-    ),
+  paper: "us-letter",
+  margin: (top: 1.8in, bottom: 1.1in, left: 1in, right: 1in),
+  // Keep the existing background setting here.
+)
+
+// This is emitted once, at the beginning of the letter.
+v(emptyhead * 1.2em)
+
     background: if background != none and background != "" {
       context {
         if counter(page).get().first() == 1 {

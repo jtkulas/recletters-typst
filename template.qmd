@@ -2,7 +2,7 @@
 title: "Letter of Recommendation"
 format:
   recletters-typst:
-    background: letterhead/watermark.pdf
+    background: letterhead/SCSUPsychologyLetterhead.pdf
     from-name: "I M Awesome, PhD"
     from-title: "Assistant Professor"
     from-affiliation: "Biosciences"
@@ -16,7 +16,7 @@ format:
     email: "imawesome@looneytunes.edu"
     phone: "320-308-4157"
     emptyhead: 0
-    emptyfoot: 0
+#    emptyfoot: 0     Depreciated 11/7 (users need to hardcode a pagebreak if content renders over footer)
 ---
 
 I am writing to strongly recommend...
