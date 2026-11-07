@@ -2,7 +2,7 @@
 title: "Letter of Recommendation"
 format:
   recletters-typst:
-    background: letterhead/SCSUPsychologyLetterhead.pdf   
+    background: letterhead/watermark.pdf   
     from-name: "I M Awesome, PhD"
     from-title: "Assistant Professor"
     from-affiliation: "Biosciences"
