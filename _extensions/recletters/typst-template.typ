@@ -9,6 +9,7 @@
   from-affiliation: none,
   from-align: "right",
   date: none,
+  email: none,
   email-name: none,
   email-domain: none,
   phone: none,
@@ -19,7 +20,26 @@
 ) = {
   set page(
     paper: "us-letter",
-    margin: (top: 1.8in, bottom: 1.1in, left: 1in, right: 1in),
+    // Apply the spacing adjustments to page 1's actual margins. Later pages
+    // retain the standard margins, regardless of where content flows.
+    margin: (
+      top: context {
+        if counter(page).get().first() == 1 {
+          1.8in + emptyhead * 1.2em
+        } else {
+          1.8in
+        }
+      },
+      bottom: context {
+        if counter(page).get().first() == 1 {
+          1.1in + emptyfoot * 1.2em
+        } else {
+          1.1in
+        }
+      },
+      left: 1in,
+      right: 1in,
+    ),
     background: if background != none and background != "" {
       context {
         if counter(page).get().first() == 1 {
@@ -34,14 +54,11 @@
     }
   )
 
-  // Top spacer
-  v(emptyhead * 1.2em)
-
   // Sender block
   if from-name != none or from-title != none or from-affiliation != none [
     #align(if from-align == "right" { right } else { left })[
-      #if from-name != none [*#from-name*] \
-      #if from-title != none [#from-title] \
+      #if from-name != none [*#from-name*] \\
+      #if from-title != none [#from-title] \\
       #if from-affiliation != none [#from-affiliation]
     ]
   ]
@@ -89,15 +106,21 @@
       #date
     ]
   ]
-  if email-name != none and email-domain != none [
+
+  let contact-email = if email != none and email != "" {
+    email
+  } else if email-name != none and email-domain != none and email-name != "" and email-domain != "" {
+    email-name + "@" + email-domain
+  } else {
+    none
+  }
+
+  if contact-email != none and contact-email != "" [
     #linebreak()
-    #strong[e-mail:] #email-name@#email-domain
+    #strong[e-mail:] #contact-email
   ]
   if phone != none and phone != "" [
     #linebreak()
     #strong[telephone:] #phone
   ]
-
-  // Bottom spacer
-  v(emptyfoot * 1.2em)
 }
