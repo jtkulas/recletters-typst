@@ -96,7 +96,7 @@ Ignacious M Awesome
 **phone**: 555--555--5555
 
 ```
-Note the `typst` linebreak character, "`\`", which may be desired when template options are excluded. 
+Note the `typst` linebreak character, "`\`", which may be desired when template options are excluded or to escape text/footer overplotting with thick footers. 
 
 [![minimal YAML specification](minimal.JPG)](minimal.pdf)
 
