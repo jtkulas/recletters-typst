@@ -2,6 +2,8 @@
 
 `recletters` generates typst pdf recommendation letters. The first page of the letter will be rendered on user--provided electronic letterhead (.pdf, .png, .jpg, .svg, & .webp letterhead formats are supported). Letterhead is somewhat contraband for all but a limited number of organizational representatives -- `recletters` allows approved users to maintain local copies of their institution's letterhead while still using Quarto as an authoring tool. 
 
+[![](loc1.JPG)](example.pdf)
+
 > [!NOTE]
 > Many Universities seem to maintain .doc/.docx letterhead templates. These are not currently supported. If your institution distributes only .doc/.docx letterhead, you will need to save as .pdf (or other similar workaround).
 
