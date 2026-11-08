@@ -19,6 +19,8 @@
 ) = {
   set page(
     paper: "us-letter",
+    // Disable Typst's default page numbers for the letter.
+    numbering: none,
     // Use normal document margins throughout. The first-page-only header
     // clearance is added as a one-time spacer below.
     margin: (top: 1in, bottom: 1.1in, left: 1in, right: 1in),
@@ -101,7 +103,9 @@
     none
   }
   if contact-email != none and contact-email != "" {
-    let contact-email = contact-email.replace("\\\\@", "@")
+    // Pandoc may escape @ in template interpolation; remove a single literal
+    // backslash immediately preceding it before rendering.
+    let contact-email = contact-email.replace("\\@", "@")
     [
       #linebreak()
       #strong[e-mail:] #contact-email
