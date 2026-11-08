@@ -58,7 +58,7 @@ These options populate a small block of text to be located at the foot of the do
 |closing    | salutation to appear above signature  | NULL      | closing: "Insincerely,"     |
 |signature   | name to appear in script font | NULL | signature: "Ignacious M Awesome"  |
 |date    | use `date: today` for auto-complete in Month day, Year format | NULL | date: today   |
-|email | email address of letter writer | NULL  | email: "imawesome@looneytuned.edu"  |
+|email | email address of letter writer | NULL  | email: "imawesome@looneytunes.edu"  |
 |phone    | letter writer's phone number  | NULL      | phone: "320-555-1234"     |
 
 #### General formatting
@@ -96,7 +96,7 @@ Ignacious M Awesome
 **phone**: 555--555--5555
 
 ```
-Note the `typst` linebreak character, "\", which may be desired when template options are excluded. 
+Note the `typst` linebreak character, "`\`", which may be desired when template options are excluded. 
 
 [![minimal YAML specification](minimal.JPG)](minimal.pdf)
 
