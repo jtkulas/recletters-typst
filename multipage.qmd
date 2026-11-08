@@ -1,8 +1,7 @@
 ---
-title: "Letter of Recommendation"
 format:
   recletters-typst:
-    background: letterhead/SCSUPsychologyLetterhead.pdf
+    background: letterhead/watermark.pdf
     from-name: "I M Awesome, PhD"
     from-title: "Associate Professor"
     from-affiliation: "Occasional Wiseguy"
@@ -13,12 +12,11 @@ format:
     closing: "Sincerely,"
     signature: "Ignacious M Awesome"
     date: today
-    email: "imawesome@looneytunes.edu"
+    email: "imawesome@stcloudstate.edu"
     phone: "320-308-4157"
-    emptyhead: -1
-#    emptyfoot: 0     Depreciated 11/7 (users need to hardcode a pagebreak if content renders over footer)
+    emptyhead: 6
 ---
 
 I am writing to strongly recommend...
 
-{{< lipsum 5 >}}
+{{< lipsum 6 >}}

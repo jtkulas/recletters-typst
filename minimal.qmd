@@ -1,0 +1,18 @@
+---
+format:
+  recletters-typst:
+    background: letterhead/looney.pdf
+---
+
+I am writing to strongly recommend...
+
+{{< lipsum 2 >}}
+
+Sincerely,  
+
+\  
+\  
+
+Ignacious M Awesome  
+**e--mail**: nonya@business.edu  
+**phone**: 555--555--5555

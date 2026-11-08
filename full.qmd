@@ -1,0 +1,22 @@
+---
+format:
+  recletters-typst:
+    background: letterhead/generic.pdf
+    from-name: "I M Awesome, PhD"
+    from-title: "Associate Professor"
+    from-affiliation: "Occasional Wiseguy"
+    from-align: right
+    subject: "Recommendation for Bullwinkle J. Moose"
+    subject-align: right
+    opening: "Dear Committee Members,"
+    closing: "Sincerely,"
+    signature: "Ignacious M Awesome"
+    date: today
+    email: "imawesome@stcloudstate.edu"
+    phone: "320-308-4157"
+    emptyhead: -1
+---
+
+I am writing to strongly recommend...
+
+{{< lipsum 2 >}}
