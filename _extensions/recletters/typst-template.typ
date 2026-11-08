@@ -19,7 +19,9 @@
 ) = {
   set page(
     paper: "us-letter",
-    margin: (top: 1.8in, bottom: 1.1in, left: 1in, right: 1in),
+    // Use normal document margins throughout. The first-page-only header
+    // clearance is added as a one-time spacer below.
+    margin: (top: 1in, bottom: 1.1in, left: 1in, right: 1in),
     background: if background != none and background != "" {
       context {
         if counter(page).get().first() == 1 {
@@ -34,15 +36,16 @@
     }
   )
 
-  // One-time top spacer, before the document's content begins.
-  v(emptyhead * 1.2em)
+  // First-page letterhead clearance: 0.8in preserves the original 1.8in
+  // first-page top offset; emptyhead adjusts only this one-time spacer.
+  v(0.8in + emptyhead * 1.2em)
 
   // Sender block
   if from-name != none or from-title != none or from-affiliation != none [
     #align(if from-align == "right" { right } else { left })[
-      #if from-name != none [*#from-name*] \\
-      #if from-title != none [#from-title] \\
-      #if from-affiliation != none [#from-affiliation]
+      #if from-name != none [*#from-name*]
+      #if from-title != none [#linebreak() #from-title]
+      #if from-affiliation != none [#linebreak() #from-affiliation]
     ]
   ]
 
@@ -97,11 +100,13 @@
   } else {
     none
   }
-
-  if contact-email != none and contact-email != "" [
-    #linebreak()
-    #strong[e-mail:] #contact-email
-  ]
+  if contact-email != none and contact-email != "" {
+    let contact-email = contact-email.replace("\\\\@", "@")
+    [
+      #linebreak()
+      #strong[e-mail:] #contact-email
+    ]
+  }
   if phone != none and phone != "" [
     #linebreak()
     #strong[telephone:] #phone
