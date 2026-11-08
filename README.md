@@ -40,7 +40,7 @@ Everything listed below is optional and organized by effect ([address block](#ad
 
 #### Address block
 
-These options populate a small block of text to be located at the head of the document, situated either right or left (see `from-align`.
+These options populate a small block of text to be located at the head of the document, situated either right or left (see `from-align`).
 
 |Option   | Description           |  Default Value         |  Example  |
 |---------|-----------------------|------------------------|-----------|
@@ -69,7 +69,7 @@ These options populate a small block of text to be located at the foot of the do
 |---------|-----------------------|------------------------|-----------|
 |subject | bolded "Re:..." to be rendered above opening line | NULL | subject: "Recommendation for Bullwinkle J. Moose"  |
 |subject-align | `left` or `right` justification of subject line | left | subject-line: right  |
-|emptyhead | number of empty rows to add prior to any document text (1^st^ page) | 0 | emptyhead: 5 |
+|emptyhead | number of empty rows to add prior to any document text (1<sup>st</sup> page) | 0 | emptyhead: 5 |
 
 ## Examples
 
