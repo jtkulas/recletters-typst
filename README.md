@@ -32,7 +32,7 @@ I am writing to **strongly recommend**...
 
 ```
 
-The [minimal specification](minimal.qmd) (`format: recletters-typst` and `background: letterhead.*`) will provide a workable letter writing canvas. Optional specifications control header blocks, signature blocks, and header and footer spacing (to accommodate different letterhead stylings).
+The [minimal specification](minimal.qmd) (`format: recletters-typst` and `background: letterhead.*`) will provide a workable letter writing canvas. Optional specifications control header blocks, signature blocks, and header spacing (to accommodate different letterhead stylings).
 
 ### Optional specifications
 
