@@ -1,11 +1,11 @@
 # Letters of Recommendation - Quarto 
 
-`recletters` generates typst pdf recommendation letters. The first page of the letter will be rendered on user--provided electronic letterhead (.pdf, .png, .jpg, .svg, & .webp letterhead formats are supported). Letterhead is somewhat contraband for all but a limited number of organizational representatives -- `recletters` allows approved users to maintain local copies of their institution's letterhead while still using Quarto as an authoring tool. 
-
 [![](loc1.JPG)](example.pdf)
 
+`recletters` generates typst pdf recommendation letters. The first page of the letter will be rendered on user--provided electronic letterhead (.pdf, .png, .jpg, .svg, & .webp letterhead formats are supported - pdf is preferred). Letterhead is typically restricted to organizational representatives -- `recletters` allows approved users to maintain local copies of their institution's letterhead while still using Quarto as an authoring tool. 
+
 > [!NOTE]
-> Many Universities seem to maintain .doc/.docx letterhead templates. These are not currently supported. If your institution distributes only .doc/.docx letterhead, you will need to save as .pdf (or other similar workaround).
+> Some Universities provide only .doc/.docx letterhead templates. These are not currently supported. If your institution distributes only .doc/.docx letterhead, you should save the .doc/.docx as .pdf (or other similar workaround).
 
 ## Installing
 
@@ -23,21 +23,20 @@ The letterhead should be stored locally and is identified with `background: lett
 
 ```bash
 ---
-title: "Letter of Recommendation"
 format:
   recletters-typst:
-    background: letterhead/SCSUPsychologyLetterhead.pdf  
+    background: letterhead/looney.pdf  
 ---
 
 I am writing to **strongly recommend**...
 
 ```
 
-The minimal specification (`format: recletters-typst` and `background: letterhead.*`) will provide a workable letter writing canvas. Optional specifications control header blocks, signature blocks, and header and footer spacing (to accommodate different letterhead stylings).  
+The [minimal specification](minimal.qmd) (`format: recletters-typst` and `background: letterhead.*`) will provide a workable letter writing canvas. Optional specifications control header blocks, signature blocks, and header and footer spacing (to accommodate different letterhead stylings).
 
-### Options
+### Optional specifications
 
-Everything listed here is optional and organized by consequence ([address block](#address-block), [signature block](#signature-block), or [general formatting](#general-formatting)):
+Everything listed below is optional and organized by effect ([address block](#address-block), [signature block](#signature-block), or [general formatting](#general-formatting)):
 
 #### Address block
 
@@ -59,32 +58,111 @@ These options populate a small block of text to be located at the foot of the do
 |closing    | salutation to appear above signature  | NULL      | closing: "Insincerely,"     |
 |signature   | name to appear in script font | NULL | signature: "Ignacious M Awesome"  |
 |date    | use `date: today` for auto-complete in Month day, Year format | NULL | date: today   |
-|email-name | email alias (content "to the left" of the @ symbol) | NULL  | email-name: "imawesome"  |
-|email-domain | email domain (content "to the right" of the @ symbol) | NULL  | email-domain: "looneytunes.edu"  |
+|email | email address of letter writer | NULL  | email: "imawesome@looneytuned.edu"  |
 |phone    | letter writer's phone number  | NULL      | phone: "320-555-1234"     |
-
-> [!NOTE]
-> `email-name` and `email-domain` are separate fields because typst was interpreting the "@" symbol as a citation key. The separation of name and domain is a current workaround.
 
 #### General formatting
 
-`emptyhead` and `emptyfoot` are intended to provide "vertical text shifting" for letter writers whose letterhead content likely differs in "thickness". Negative values are allowed (e.g., `emptyhead: -2` will shift the entire text "up" two rows).
+`emptyhead` provides "vertical text shifting" for letter writers whose letterhead content likely differs in "thickness". Negative values are allowed (e.g., `emptyhead: -2` will shift the entire text "up" two rows).
 
 |Option   | Description           |  Default Value         |  Example  |
 |---------|-----------------------|------------------------|-----------|
 |subject | bolded "Re:..." to be rendered above opening line | NULL | subject: "Recommendation for Bullwinkle J. Moose"  |
 |subject-align | `left` or `right` justification of subject line | left | subject-line: right  |
 |emptyhead | number of empty rows to add prior to any document text (1^st^ page) | 0 | emptyhead: 5 |
-|emptyfoot | number of empty rows to add at the bottom of the 1^st^ page | 0 | emptyfoot: -2 |
 
 ## Examples
 
+#### Minimal specification:
+
+```bash
+---
+format:
+  recletters-typst:
+    background: letterhead/looney.pdf
+---
+
+I am writing to strongly recommend...
+
+{{< lipsum 2 >}}
+
+Sincerely,  
+
+\  
+\  
+
+Ignacious M Awesome  
+**e--mail**: nonya@business.edu  
+**phone**: 555--555--5555
+
+```
+Note the `typst` linebreak character, "\", which may be desired when template options are excluded. 
+
+[![minimal YAML specification](minimal.JPG)](minimal.pdf)
+
+#### Full specification (all user fields specified):
+
+```bash
+---
+format:
+  recletters-typst:
+    background: letterhead/generic.pdf
+    from-name: "I M Awesome, PhD"
+    from-title: "Associate Professor"
+    from-affiliation: "Occasional Wiseguy"
+    from-align: right
+    subject: "Recommendation for Bullwinkle J. Moose"
+    subject-align: right
+    opening: "Dear Committee Members,"
+    closing: "Sincerely,"
+    signature: "Ignacious M Awesome"
+    date: today
+    email: "imawesome@stcloudstate.edu"
+    phone: "320-308-4157"
+    emptyhead: -1
+---
+
+I am writing to strongly recommend...
+
+{{< lipsum 2 >}}
+
+```
+
+[![full YAML specification](full.JPG)](full.pdf)
+
+#### Multipage specification
+
+```bash
+---
+format:
+  recletters-typst:
+    background: letterhead/watermark.pdf
+    from-name: "I M Awesome, PhD"
+    from-title: "Associate Professor"
+    from-affiliation: "Occasional Wiseguy"
+    from-align: left
+    subject: "Recommendation for Bullwinkle J. Moose"
+    subject-align: left
+    opening: "Dear Committee Members,"
+    closing: "Sincerely,"
+    signature: "Ignacious M Awesome"
+    date: today
+    email: "imawesome@stcloudstate.edu"
+    phone: "320-308-4157"
+    emptyhead: 6
+---
+
+I am writing to strongly recommend...
+
+{{< lipsum 6 >}}
+
+```
+
+[![Multiple pages](multipage.JPG)](multipage.pdf)
 
 ## Known issues
 
-+ e-mail addresses are currently YAML specified separately by alias and domain - there was a rendering issue with typst's treatment of the "at" sign (@) and this is the current workaround. If you have a better idea, please open an issue.
 + `date` (signature block) only accepts "today" as a valid value. If users want a different date, it will need to be specified outside of the signature block
-+ `emptyhead` is intended to impact only the first page (with the letterhead) but currently affects all pages. `emptyfoot` is also intended only to impact the first page (if the footer content is thick), but currently is inoperative
 
 ## Contributing 
 
