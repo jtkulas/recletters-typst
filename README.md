@@ -1,6 +1,6 @@
 # Letters of Recommendation - Quarto 
 
-[![](loc1.JPG)](example.pdf)
+[![](loc1.png)](example.pdf)
 
 `recletters` generates typst pdf recommendation letters. The first page of the letter will be rendered on user--provided electronic letterhead (.pdf, .png, .jpg, .svg, & .webp letterhead formats are supported - pdf is preferred). Letterhead is typically restricted to organizational representatives -- `recletters` allows approved users to maintain local copies of their institution's letterhead while still using Quarto as an authoring tool. 
 
@@ -98,7 +98,7 @@ Ignacious M Awesome
 ```
 Note the `typst` linebreak character, "`\`", which may be desired when template options are excluded or to escape text/footer overplotting with thick footers. 
 
-[![minimal YAML specification](minimal.JPG)](minimal.pdf)
+[![minimal YAML specification](minimal.png)](minimal.pdf)
 
 #### Full specification (all user fields specified):
 
@@ -128,7 +128,7 @@ I am writing to strongly recommend...
 
 ```
 
-[![full YAML specification](full.JPG)](full.pdf)
+[![full YAML specification](full.png)](full.pdf)
 
 #### Multipage specification
 
@@ -158,7 +158,7 @@ I am writing to strongly recommend...
 
 ```
 
-[![Multiple pages](multipage.JPG)](multipage.pdf)
+[![Multiple pages](multipage.png)](multipage.pdf)
 
 ## Known issues
 
