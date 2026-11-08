@@ -4,8 +4,8 @@ format:
   recletters-typst:
     background: letterhead/SCSUPsychologyLetterhead.pdf
     from-name: "I M Awesome, PhD"
-    from-title: "Assistant Professor"
-    from-affiliation: "BioPsych Specialty"
+    from-title: "Associate Professor"
+    from-affiliation: "Occasional Wiseguy"
     from-align: left
     subject: "Recommendation for Bullwinkle J. Moose"
     subject-align: left
