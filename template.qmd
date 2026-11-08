@@ -21,4 +21,4 @@ format:
 
 I am writing to strongly recommend...
 
-{{< lipsum 2 >}}
+{{< lipsum 5 >}}
