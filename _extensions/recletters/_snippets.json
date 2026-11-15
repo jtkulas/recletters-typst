@@ -1,0 +1,64 @@
+{
+  "Minimal letter": {
+    "prefix": "recletters-minimal",
+    "body": [
+      "---",
+      "format:",
+      "  recletters-typst:",
+      "    background: ${1:letterhead/letterhead.pdf}",
+      "---",
+      "",
+      "${0:I am writing to strongly recommend...}",
+      ""
+    ],
+    "description": "Minimal recletters-typst front matter (background only)."
+  },
+  "Full letter": {
+    "prefix": "recletters-full",
+    "body": [
+      "---",
+      "format:",
+      "  recletters-typst:",
+      "    background: ${1:letterhead/letterhead.pdf}",
+      "    from-name: ${2:I. M. Awesome, PhD}",
+      "    from-title: ${3:Associate Professor}",
+      "    from-affiliation: ${4:Department of Biosciences}",
+      "    from-align: ${5|left,right|}",
+      "    subject: ${6:Recommendation for Candidate Name}",
+      "    subject-align: ${7|left,right|}",
+      "    opening: ${8:Dear Committee Members,}",
+      "    closing: ${9:Sincerely,}",
+      "    signature: ${10:Ignacious M. Awesome}",
+      "    date: ${11|today|}",
+      "    email: ${12:name@university.edu}",
+      "    phone: ${13:555-555-5555}",
+      "    emptyhead: ${14:0}",
+      "---",
+      "",
+      "${0:I am writing to strongly recommend...}",
+      ""
+    ],
+    "description": "Full recletters-typst front matter with all common options."
+  },
+  "Address block only": {
+    "prefix": "recletters-from",
+    "body": [
+      "    from-name: ${1:I. M. Awesome, PhD}",
+      "    from-title: ${2:Associate Professor}",
+      "    from-affiliation: ${3:Department}",
+      "    from-align: ${4|left,right|}"
+    ],
+    "description": "Insert just the from-/address-block options."
+  },
+  "Signature block only": {
+    "prefix": "recletters-signature",
+    "body": [
+      "    closing: ${1:Sincerely,}",
+      "    signature: ${2:Ignacious M. Awesome}",
+      "    date: ${3|today|}",
+      "    email: ${4:name@university.edu}",
+      "    phone: ${5:555-555-5555}"
+    ],
+    "description": "Insert just the signature-block options."
+  }
+}

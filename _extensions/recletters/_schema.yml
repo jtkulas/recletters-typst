@@ -1,0 +1,63 @@
+formats:
+  recletters-typst:
+    background:
+      type: string
+      description: "Location and filename of letterhead template (pdf preferred; png/jpg/svg/webp also supported)."
+
+    from-name:
+      type: string
+      description: "Address block subject name."
+
+    from-title:
+      type: string
+      description: "Address block subject title."
+
+    from-affiliation:
+      type: string
+      description: "Address block subject affiliation."
+
+    from-align:
+      type: string
+      enum: [left, right]
+      default: left
+      description: "Address block location (left- or right-justified)."
+
+    subject:
+      type: string
+      description: "Memo line - prepends 'Re:' and renders in bold font."
+
+    subject-align:
+      type: string
+      enum: [left, right]
+      default: left
+      description: "Memo line location (left- or right-justified)."
+
+    opening:
+      type: string
+      description: "Salutation to begin the letter."
+
+    closing:
+      type: string
+      description: "Signature block header - salutation."
+
+    signature:
+      type: string
+      description: "Signature block letter-writer name - rendered in 'Hurricane' google font."
+
+    date:
+      type: string
+      enum: [today]
+      description: "Signature block date - rendered underneath signature. Only 'today' is currently supported (auto-completes to Month day, Year)."
+
+    email:
+      type: string
+      description: "Signature block letter-writer email - rendered underneath date."
+
+    phone:
+      type: string
+      description: "Signature block letter-writer phone number - rendered underneath email."
+
+    emptyhead:
+      type: integer
+      default: 0
+      description: "Header space (empty rows) applied to the 1st page. Negative values shift text upward."
